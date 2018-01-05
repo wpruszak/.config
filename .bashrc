@@ -19,10 +19,6 @@ HISTFILESIZE=10000
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
 
-# If set, the pattern "**" used in a pathname expansion context will
-# match all files and zero or more directories and subdirectories.
-shopt -s globstar
-
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
@@ -50,8 +46,8 @@ export DISPLAY=local_host:0.0
 # SSH key adding.
 eval `ssh-agent -s` &> /dev/null
 PASS=`cat $HOME/.sshpass`
-install -vm700 <(echo "echo $PASS") "{$HOME}/ps.sh" &> /dev/null
-cat $HOME/.ssh/id_rsa | SSH_ASKPASS="${HOME}/ps.sh" ssh-add &> /dev/null - && rm "{$HOME}/ps.sh" &> /dev/null
+install -vm700 <(echo "echo $PASS") "${HOME}/ps.sh" &> /dev/null
+cat $HOME/.ssh/id_rsa | SSH_ASKPASS="${HOME}/ps.sh" ssh-add &> /dev/null - && rm "${HOME}/ps.sh" &> /dev/null
 
 export EDITOR=vim
 

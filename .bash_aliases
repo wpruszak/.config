@@ -24,4 +24,5 @@ alias :q='exit'
 alias nano='vim'
 alias sn='sudo vim'
 alias sv='sudo vim'
+alias cmd='cmd.exe /C'
 
