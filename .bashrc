@@ -11,9 +11,6 @@ HISTCONTROL=ignoreboth
 # append to the history file, don't overwrite it
 shopt -s histappend
 
-# dotfiles included in globs
-shopt -s dotglob
-
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
 HISTSIZE=5000
 HISTFILESIZE=10000
@@ -41,7 +38,8 @@ if ! shopt -oq posix; then
 fi
 
 # PS1.
-export PS1="\[\033[38;5;81m\]\u\[$(tput sgr0)\]\[\033[38;5;226m\]@\[$(tput sgr0)\]\[\033[38;5;81m\]\h\[$(tput sgr0)\]\[\033[38;5;226m\]?\[$(tput sgr0)\]\[\033[38;5;81m\]\W\[$(tput sgr0)\]\[\033[38;5;226m\]:\[$(tput sgr0)\]\[\033[38;5;81m\]\$?\\$\[$(tput sgr0)\]\[\033[38;5;253m\]>>\[$(tput sgr0)\]"
+export PS1="\[\033[38;5;82m\]\u\[$(tput sgr0)\]\[\033[38;5;15m\]?\[$(tput sgr0)\]\[\033[38;5;46m\]\W\[$(tput sgr0)\]\[\033[38;5;15m\]:\[$(tput sgr0)\]\[\033[38;5;82m\]\$?\[$(tput sgr0)\]\[\033[38;5;46m\]\\$\[$(tput sgr0)\]\[\033[38;5;15m\]>\[$(tput sgr0)\]"
+
 
 export PATH=$PATH:$HOME/bin
 export DISPLAY=local_host:0.0
