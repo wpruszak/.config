@@ -38,17 +38,10 @@ if ! shopt -oq posix; then
 fi
 
 # PS1.
-export PS1="\[\033[38;5;82m\]\u\[$(tput sgr0)\]\[\033[38;5;15m\]?\[$(tput sgr0)\]\[\033[38;5;46m\]\W\[$(tput sgr0)\]\[\033[38;5;15m\]:\[$(tput sgr0)\]\[\033[38;5;82m\]\$?\[$(tput sgr0)\]\[\033[38;5;46m\]\\$\[$(tput sgr0)\]\[\033[38;5;15m\]>\[$(tput sgr0)\]"
-
+export PS1="\[\033[00;34m\]{ \[\033[01;34m\]\W \[\033[00;34m\]}\[\033[01;32m\] $( git rev-parse --abbrev-ref HEAD 2> /dev/null || echo ) \[\033[01;31m\]» \[\033[00m\]"
 
 export PATH=$PATH:$HOME/bin
 export DISPLAY=local_host:0.0
-
-# SSH key adding.
-eval `ssh-agent -s` &> /dev/null
-PASS=`cat $HOME/.sshpass`
-install -vm700 <(echo "echo $PASS") "${HOME}/ps.sh" &> /dev/null
-cat $HOME/.ssh/id_rsa | SSH_ASKPASS="${HOME}/ps.sh" ssh-add &> /dev/null - && rm "${HOME}/ps.sh" &> /dev/null
 
 export EDITOR=vim
 

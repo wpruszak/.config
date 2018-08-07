@@ -10,6 +10,26 @@ Plugin 'vim-airline/vim-airline-themes'
 syntax on
 set ttyfast
 
+if !isdirectory($HOME."/.vim")
+    call mkdir($HOME."/.vim", "", 0770)
+endif
+if !isdirectory($HOME."/.vim/undo-dir")
+    call mkdir($HOME."/.vim/undo-dir", "", 0700)
+endif
+if !isdirectory($HOME."/.vim/dir")
+    call mkdir($HOME."/.vim/dir", "", 0700)
+endif
+if !isdirectory($HOME."/.vim/backup-dir")
+    call mkdir($HOME."/.vim/backup-dir", "", 0700)
+endif
+
+set undofile
+set undodir=~/.vim/undo-dir
+set backup
+set backupdir=~/.vim/backup-dir
+set swapfile
+set directory=~/.vim/dir
+
 set background=dark
 set laststatus=2
 set number

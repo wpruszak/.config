@@ -1,3 +1,5 @@
+source .globals
+
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
     alias ls='ls --color=auto'
@@ -10,7 +12,7 @@ alias copy='clip.exe'
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
-alias cdh='cd /mnt/c/Users/wopru/'
+alias cdh="cd $W_HOME"
 alias v='vim'
 alias vi='vim'
 alias vmi='vim'
